@@ -28,7 +28,6 @@
 
 ![image](https://github.com/lissenko228/web-security/assets/73995545/609cbea9-3dfc-43e1-b506-fbc7497ca4b0)
 
-
 ### Файл middleware.js
 
 В этом файле есть два мидлвеера user и admin, которые получают авторизацию из заголовков.
@@ -57,3 +56,10 @@ const { bearer } = req.params;
 
 ![image](https://github.com/lissenko228/web-security/assets/73995545/0a589c93-3e6c-4911-b4ed-8d0a8eab2884)
 
+## 3 практическая (practice_3)
+
+В файле inject.js есть два запроса;
+
+Запрос "/api/inject" не защищен от SQL инъекций и принимаемый параметр просто встраивается в SQL row query
+
+Запрос "/api/notinject" защищен от инъекций, принимаемый параметр встраивается через replacements, в которых ORM Sequelize получает необходимое значение тем самым исключая инъекцию
